@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		AB33DDC729AB290A000D9A39 /* FriendFaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33DDC629AB290A000D9A39 /* FriendFaceApp.swift */; };
-		AB33DDC929AB290A000D9A39 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33DDC829AB290A000D9A39 /* ContentView.swift */; };
+		AB33DDC929AB290A000D9A39 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33DDC829AB290A000D9A39 /* UsersView.swift */; };
 		AB33DDCB29AB290C000D9A39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB33DDCA29AB290C000D9A39 /* Assets.xcassets */; };
 		AB33DDCE29AB290C000D9A39 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB33DDCD29AB290C000D9A39 /* Preview Assets.xcassets */; };
+		AB33DDD529AB2ABE000D9A39 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33DDD429AB2ABE000D9A39 /* Friend.swift */; };
+		AB33DDD729AB2AC7000D9A39 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33DDD629AB2AC7000D9A39 /* User.swift */; };
+		AB33DDD929AC6D9C000D9A39 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33DDD829AC6D9C000D9A39 /* UsersViewModel.swift */; };
+		AB33DDDB29AC72B6000D9A39 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33DDDA29AC72B6000D9A39 /* UserDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB33DDC329AB290A000D9A39 /* FriendFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB33DDC629AB290A000D9A39 /* FriendFaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFaceApp.swift; sourceTree = "<group>"; };
-		AB33DDC829AB290A000D9A39 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB33DDC829AB290A000D9A39 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		AB33DDCA29AB290C000D9A39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB33DDCD29AB290C000D9A39 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AB33DDD429AB2ABE000D9A39 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		AB33DDD629AB2AC7000D9A39 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AB33DDD829AC6D9C000D9A39 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		AB33DDDA29AC72B6000D9A39 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				AB33DDC629AB290A000D9A39 /* FriendFaceApp.swift */,
-				AB33DDC829AB290A000D9A39 /* ContentView.swift */,
+				AB33DDC829AB290A000D9A39 /* UsersView.swift */,
+				AB33DDDA29AC72B6000D9A39 /* UserDetailsView.swift */,
+				AB33DDD829AC6D9C000D9A39 /* UsersViewModel.swift */,
+				AB33DDD429AB2ABE000D9A39 /* Friend.swift */,
+				AB33DDD629AB2AC7000D9A39 /* User.swift */,
 				AB33DDCA29AB290C000D9A39 /* Assets.xcassets */,
 				AB33DDCC29AB290C000D9A39 /* Preview Content */,
 			);
@@ -137,8 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB33DDC929AB290A000D9A39 /* ContentView.swift in Sources */,
+				AB33DDD729AB2AC7000D9A39 /* User.swift in Sources */,
+				AB33DDD529AB2ABE000D9A39 /* Friend.swift in Sources */,
+				AB33DDC929AB290A000D9A39 /* UsersView.swift in Sources */,
 				AB33DDC729AB290A000D9A39 /* FriendFaceApp.swift in Sources */,
+				AB33DDD929AC6D9C000D9A39 /* UsersViewModel.swift in Sources */,
+				AB33DDDB29AC72B6000D9A39 /* UserDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +291,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +321,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
