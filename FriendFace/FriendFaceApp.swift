@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct FriendFaceApp: App {
+    @StateObject private var dataController = DataController.shared
+    
     var body: some Scene {
         WindowGroup {
             UsersView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

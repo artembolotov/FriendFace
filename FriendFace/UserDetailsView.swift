@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct UserDetailsView: View {
-    let user: User
+    var user: User
     
     let rows = [GridItem(.adaptive(minimum: 100))]
     
@@ -18,22 +19,20 @@ struct UserDetailsView: View {
                 Group {
                     
                     Text(user.name.components(separatedBy: .whitespaces).joined(separator: "\n"))
-                    .font(Font.system(size: 34).bold())
+                        .font(.largeTitle.bold())
                     
                     Text("\(user.company), \(user.age)")
                         .font(.callout)
                     
                     Text(user.address)
-                        
+
                     Text(user.email)
                         .foregroundColor(.blue)
-                    
+
                     Text(user.about)
-                    
-                    if let tags = tagsInTextFormat {
-                        Text(tags)
-                            .foregroundColor(.blue)
-                    }
+
+                    Text(user.tags.joined(separator: ", "))
+                        .foregroundColor(.blue)
                 }
                 .padding(.horizontal)
                 
@@ -41,7 +40,7 @@ struct UserDetailsView: View {
                     Text("Friends:")
                         .padding(.horizontal)
                         .padding(.bottom, -10)
-                    
+
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: rows) {
                             ForEach(user.friends) { friend in
@@ -62,12 +61,6 @@ struct UserDetailsView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-    }
-    
-    private var tagsInTextFormat: String? {
-        guard !user.tags.isEmpty else { return nil }
-        
-        return user.tags.map { "#\($0)" }.joined(separator: ", ")
     }
 }
 

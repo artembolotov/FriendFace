@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct UsersView: View {
-    @ObservedObject var model = UsersViewModel()
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)]) var cachedUsers: FetchedResults<CachedUser>
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(model.users) { user in
+                ForEach(cachedUsers) { user in
                     NavigationLink {
-                        UserDetailsView(user: user)
+                        UserDetailsView(user: user.convertToUser())
                     } label: {
                         UserCell(user: user)
                     }
@@ -25,20 +27,20 @@ struct UsersView: View {
             .navigationTitle("Users")
         }
         .task {
-           await model.fetchUsers()
+            await DataController.shared.fetchFromNetwork()
         }
     }
 }
 
 struct UserCell: View {
-    let user: User
+    let user: CachedUser
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(user.name)
+                Text(user.nameWrapped)
                     .fontWeight(.medium)
-                Text(user.company)
+                Text(user.companyWrapped)
                     .foregroundColor(.secondary)
             }
             Spacer()
@@ -49,8 +51,10 @@ struct UserCell: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        UsersView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//
+//        UsersView()
+//            .environment(\.managedObjectContext, DataController().container.viewContext)
+//    }
+//}
